@@ -12,9 +12,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Josefin Slab', ...defaultTheme.fontFamily.sans],
             },
         },
+        container: {
+            center: true,
+        }
     },
     plugins: [],
 };
