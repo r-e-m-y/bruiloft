@@ -5,6 +5,7 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - ./src:/var/www
+      - dbdata:/var/www/database/data
     networks:
       - bruiloft
     environment:
@@ -26,6 +27,9 @@ services:
     networks:
       - bruiloft
     restart: unless-stopped
+
+volumes:
+  dbdata:
 
 networks:
   bruiloft:
