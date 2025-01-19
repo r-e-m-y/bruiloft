@@ -34,8 +34,9 @@ RUN docker-php-ext-install \
 # Redis for caching/sessions
 RUN pecl install redis && docker-php-ext-enable redis
 
-# Xdebug for debugging - REMOVE IN PRODUCTION!
-RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug \
+    && docker-php-ext-enable xdebug; \
+fi
 
 # Get Composer (PHP package manager)
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
