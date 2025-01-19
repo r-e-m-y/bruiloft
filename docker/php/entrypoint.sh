@@ -16,6 +16,7 @@ composer install
 echo "Finished composer install"
 
 echo "Build assets"
+npm install
 npm run build
 echo "Finished building assets"
 
