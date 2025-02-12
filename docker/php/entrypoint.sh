@@ -4,7 +4,7 @@ set -e
 echo "Running container init script..."
 
 echo "Run composer install"
-composer install
+composer install --no-dev
 echo "Finished composer install"
 
 php /var/www/artisan key:generate
