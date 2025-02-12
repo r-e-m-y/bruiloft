@@ -3,6 +3,10 @@ set -e
 
 echo "Running container init script..."
 
+echo "Run composer install"
+composer install
+echo "Finished composer install"
+
 php /var/www/artisan key:generate
 
 if [ ! -f "/var/www/database/data/database.sqlite" ]; then
@@ -10,10 +14,6 @@ if [ ! -f "/var/www/database/data/database.sqlite" ]; then
     mkdir "/var/www/database/data"
     touch "/var/www/database/data/database.sqlite"
 fi
-
-echo "Run composer install"
-composer install
-echo "Finished composer install"
 
 echo "Build assets"
 npm install
