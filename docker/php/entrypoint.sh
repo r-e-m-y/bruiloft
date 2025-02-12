@@ -11,7 +11,6 @@ php /var/www/artisan key:generate
 
 if [ ! -f "/var/www/database/data/database.sqlite" ]; then
     echo "Creating SQLite database..."
-    mkdir "/var/www/database/data"
     touch "/var/www/database/data/database.sqlite"
 fi
 
